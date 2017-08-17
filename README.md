@@ -10,6 +10,8 @@ zookeeper 使用案例
 
 4： HA和Leader选举并不是一回事
 
+5： 说得很简单，但做起来很难
+
 example 来源于   https://zookeeper.apache.org/doc/trunk/javaExample.html
 
 中文辅助解释 by 李支锋
