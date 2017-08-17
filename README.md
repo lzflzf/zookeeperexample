@@ -8,7 +8,7 @@ zookeeper 使用案例
 
 3： 重启一个进程 (说得高大上一点这里可以做HA,高可用)
 
-4: HA和Leader选举并不是一回事
+4： HA和Leader选举并不是一回事
 
 example 来源于   https://zookeeper.apache.org/doc/trunk/javaExample.html
 
