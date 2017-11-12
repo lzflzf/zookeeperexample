@@ -5,11 +5,10 @@ filename=$1
 ## 先检测文件是否上锁，如果上锁则说明前一个处理进程还没有退出
 lock=`ls /opt/locks/ | grep ^${2}.lock.`
 
-
 if [[ ${lock} ]]
 then
    echo ${filename} is locked
-   -----maybe there should be ruturn
+   ####maybe there should be ruturn
    exit
 fi
 
