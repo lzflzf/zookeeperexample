@@ -18,7 +18,7 @@ echo ${lock}
 touch ${lock}
 
 
-if [[  ${filename} =~ ^([0-9]{18})([0-9]{8})([a-z_]+)\.csv$   ]]
+if [[  ${2} =~ ^([0-9]{18})([0-9]{8})([a-z_]+)\.csv$   ]]
 then
 	#### 先对文件进行MD5校验，有可能文件是错误的，也有可能文件正在传输中
     MD5=`md5sum ${filename} | awk '{print $1}'`
