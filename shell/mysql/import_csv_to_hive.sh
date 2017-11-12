@@ -38,7 +38,7 @@ then
     	###
     fi
 else
-    echo `date +%Y-%m-%d %H:%M:%S`------${filename} Not Match\n  >>  `date +%Y%m%d`error.out
+    echo `date +%Y-%m-%d %H:%M:%S`------${filename} Not Match  >>  `date +%Y%m%d`error.out
 fi
 
 ## 
