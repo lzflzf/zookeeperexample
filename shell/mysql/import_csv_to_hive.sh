@@ -33,6 +33,8 @@ then
     	echo `date +'%Y-%m-%d %H:%M:%S'`"------load file "${BASH_REMATCH[0]}"\n"  >> `date +%Y%m%d`"log.out"
     	hivesql="load data inpath '$filename' into table "${table}" PARTTEN BY(indate='${indate}')"
     	echo ${hivesql}"\n" >> `date +%Y%m%d`"log.out"
+    	hive -e $hivesql
+    	mv $filename >> /opt/backer/data/
     fi
 else
     echo `date +'%Y-%m-%d %H:%M:%S'`"------"$filename" Not Match\n"  >>  `date +%Y%m%d`"error.out"
