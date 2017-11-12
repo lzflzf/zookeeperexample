@@ -36,7 +36,7 @@ then
     	hivesql=load data local inpath '${filename}' into table ${table} PARTITION BY(indate='${indate}') ;
     	echo ${hivesql} >> `date +%Y%m%d`log.out
     	hive -e "${hivesql}"
-    	mv ${filename} >> /opt/backer/data/
+    	mv ${filename}  /opt/backer/data/
     	###
     fi
 else
