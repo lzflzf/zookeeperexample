@@ -13,7 +13,7 @@ then
    exit
 fi
 
-echo unlock continue,adding lock for $filename
+echo unlock continue,adding lock for ${filename}
 touch ${lock}
 
 
