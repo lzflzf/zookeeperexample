@@ -21,7 +21,7 @@ echo "grant trigger on ${database}.${table} to ${dumper}@'${ip}';" >> create_bac
 /usr/local/mysql/bin/mysql -uroot -p${root_passwd} -e "source create_backer_user.sql";
 
 echo  > /opt/backer/mysqldump.sh ;
-echo /usr/local/mysql/bin/mysqldump -h127.0.0.1 -u${dumper} -p${password} --all-databases  > ${datapath}/\`date +%Y%m%d\`all.sql  >  /opt/backer/mysqldump.sh ;
+echo "/usr/local/mysql/bin/mysqldump -h127.0.0.1 -u${dumper} -p${password} --all-databases  > ${datapath}/\`date +%Y%m%d\`all.sql"  >  /opt/backer/mysqldump.sh ;
 echo /usr/bin/find ${datapath} -mtime +3 -delete; >> /opt/backer/mysqldump.sh ;
 echo chmod 600 ${datapath}/\* >> /opt/backer/mysqldump.sh ;
 echo 10 23 \* \* \* sh /opt/backer/mysqldump.sh >> /etc/crontab ;
