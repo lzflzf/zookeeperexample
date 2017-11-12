@@ -17,9 +17,9 @@ echo unlock continue,adding lock for $filename
 touch ${lock}
 
 
-if [[  $filename =~ ^([0-9]{18})([0-9]{8})([a-z_]+)\.csv$   ]]
+if [[  ${filename} =~ ^([0-9]{18})([0-9]{8})([a-z_]+)\.csv$   ]]
 then
-    MD5=`md5sum $filename | awk '{print $1}'`
+    MD5=`md5sum ${filename} | awk '{print $1}'`
     expectMD5=`cat $filename.md5`
     echo ${MD5}
     echo ${expectMD5}
@@ -30,11 +30,11 @@ then
     	echo continue
     	indate=${BASH_REMATCH[2]}
     	table=${BASH_REMATCH[3]}
-    	echo `date +%Y-%m-%d %H:%M:%S`------load file ${BASH_REMATCH[0]}  >> `date +%Y%m%d`log.out    	
+    	echo `date +%Y-%m-%d %H:%M:%S`------load file ${filename}  >> `date +%Y%m%d`log.out    	
     	hivesql=load data inpath '${filename}' into table ${table} PARTTEN BY(indate='${indate}')
     	echo ${hivesql} >> `date +%Y%m%d`log.out
     	hive -e "${hivesql}"
-    	mv $filename >> /opt/backer/data/
+    	mv ${filename} >> /opt/backer/data/
     	###
     fi
 else
