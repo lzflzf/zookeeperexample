@@ -9,7 +9,7 @@ echo ${lock}
 
 if [[ -e ${lock} ]]
 then
-   echo $filename is locked
+   echo ${filename} is locked
    exit
 fi
 
@@ -20,7 +20,7 @@ touch ${lock}
 if [[  ${filename} =~ ^([0-9]{18})([0-9]{8})([a-z_]+)\.csv$   ]]
 then
     MD5=`md5sum ${filename} | awk '{print $1}'`
-    expectMD5=`cat $filename.md5`
+    expectMD5=`cat ${filename}.md5`
     echo ${MD5}
     echo ${expectMD5}
     if [[ ${MD5} != ${expectMD5} ]]
