@@ -33,7 +33,7 @@ then
     	indate=${BASH_REMATCH[2]}
     	table=${BASH_REMATCH[3]}
     	echo `date +%Y-%m-%d %H:%M:%S`------load file ${filename}  >> `date +%Y%m%d`log.out    	
-    	hivesql=load data inpath '${filename}' into table ${table} PARTTEN BY(indate='${indate}') ;
+    	hivesql=load data local inpath '${filename}' into table ${table} PARTITION BY(indate='${indate}') ;
     	echo ${hivesql} >> `date +%Y%m%d`log.out
     	hive -e "${hivesql}"
     	mv ${filename} >> /opt/backer/data/
