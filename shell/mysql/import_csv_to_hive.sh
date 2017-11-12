@@ -35,6 +35,7 @@ then
     	echo ${hivesql}"\n" >> `date +%Y%m%d`"log.out"
     	hive -e $hivesql
     	mv $filename >> /opt/backer/data/
+    	###
     fi
 else
     echo `date +'%Y-%m-%d %H:%M:%S'`"------"$filename" Not Match\n"  >>  `date +%Y%m%d`"error.out"
