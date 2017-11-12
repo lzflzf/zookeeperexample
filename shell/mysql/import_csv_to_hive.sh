@@ -9,7 +9,7 @@ lock=`ls /opt/locks/ | grep ^${2}.lock.`
 if [[ ${lock} ]]
 then
    echo ${filename} is locked
-   maybe there should be ruturn
+   -----maybe there should be ruturn
    exit
 fi
 
