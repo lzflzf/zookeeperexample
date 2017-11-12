@@ -18,7 +18,7 @@ echo "grant show view on ${database}.${table} to ${dumper}@'${ip}';" >> create_b
 echo "grant lock tables on ${database}.${table} to ${dumper}@'${ip}';" >> create_backer_user.sql;
 echo "grant trigger on ${database}.${table} to ${dumper}@'${ip}';" >> create_backer_user.sql;
 
-/usr/local/mysql/bin/mysql -uroot -p${root_passwd} -e "source create_backer_user.sql";
+/usr/local/mysql/bin/mysql -uroot -p${root_passwd} -e "source create_backer_user.sql;";
 
 echo  > /opt/backer/mysqldump.sh ;
 echo "/usr/local/mysql/bin/mysqldump -h127.0.0.1 -u${dumper} -p${password} --all-databases --lock-all-tables > ${datapath}/\`date +%Y%m%d\`all.sql"  >  /opt/backer/mysqldump.sh ;
