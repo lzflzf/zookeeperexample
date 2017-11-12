@@ -43,5 +43,5 @@ fi
 
 ## 
 echo end handle!!! deleting lock for ${filename}
-rm -rf ${lock}
+rm -f ${lock}
 
