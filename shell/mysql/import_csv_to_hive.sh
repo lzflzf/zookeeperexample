@@ -2,18 +2,20 @@
 
 filename=$1
 
-lock=/opt/locks/${2}.lock.`date +%Y-%m-%d-%H-%M-%S`
-echo ${lock}
-
 ## 先检测文件是否上锁，如果上锁则说明前一个处理进程还没有退出
+lock=`ls /opt/locks/ | grep ^${2}.lock.`
 
-if [[ -e ${lock} ]]
+
+if [[ ${lock} ]]
 then
    echo ${filename} is locked
+   maybe there should be ruturn
    exit
 fi
 
 echo unlock continue,adding lock for ${filename}
+lock=/opt/locks/${2}.lock.`date +%Y-%m-%d-%H-%M-%S`
+echo ${lock}
 touch ${lock}
 
 
