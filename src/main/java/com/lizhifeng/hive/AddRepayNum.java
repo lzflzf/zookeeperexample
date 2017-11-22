@@ -17,7 +17,7 @@ public class AddRepayNum extends UDF {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < plans.length - 1; i++) {
 			sb.append(plans[i]);
-			sb.append("repay_num\":\"").append(i + 1).append("\",interest");
+			sb.append("repay_num\":\"").append(i + 1).append("\",\"interest");
 		}
 		sb.append(plans[plans.length - 1]);
 		return sb.toString();
