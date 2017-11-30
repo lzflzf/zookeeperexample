@@ -12,5 +12,11 @@ zookeeper 使用案例
 
 5： 说得很简单，但做起来很难，看得再多，不一定能理解，能写
 
+6: 事件驱动  event driven
+
+7： 多线程
+
+8：main 线程进入阻塞状态。直到接收 notifyall() 命令 , 以及 dead为true , main 线程退出，整个进程退出
+
 example 来源于   https://zookeeper.apache.org/doc/trunk/javaExample.html
 
