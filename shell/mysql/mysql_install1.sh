@@ -6,7 +6,7 @@ chmod 600 /root/.ssh/mysql_root_passwd
 datadir=/opt/mysql/data63 ;
 
 # tar zxvf $1 -C /usr/local ;
-echo PATH=\${PATH}:/usr/local/mysql/bin >> /etc/profile
+echo export PATH=\${PATH}:/usr/local/mysql/bin >> /etc/profile
 source /etc/profile
 /usr/local/mysql/bin/mysql_install_db --datadir=${datadir} ;
 useradd -r -s /bin/false -M mysql ;
