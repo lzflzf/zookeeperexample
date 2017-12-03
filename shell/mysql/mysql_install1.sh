@@ -15,6 +15,7 @@ chown mysql:mysql -R ${datadir} ;
 echo [mysqld] > /etc/my.cnf ;
 echo datadir=${datadir} >> /etc/my.cnf ;
 echo socket=${datadir}/mysql.sock >> /etc/my.cnf ;
+echo character-set-server=utf8 >> /etc/my.cnf ;
 echo skip-grant-tables >> /etc/my.cnf ;
 
 echo [mysqld_safe] >> /etc/my.cnf ;
