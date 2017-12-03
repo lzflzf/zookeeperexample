@@ -35,3 +35,5 @@ sed -i s/skip-grant-tables//g /etc/my.cnf ;
 
 /usr/local/mysql/support-files/mysql.server restart 1>mysql.out 2>mysql.out;
 
+
+### http://yanue.net/post-134.html
